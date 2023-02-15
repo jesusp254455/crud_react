@@ -7,12 +7,23 @@ const Form = () => {
 
     const guardar = (e) => {
         e.preventDefault();
-        
+
+
+
         let usuarios = {
             nombres: Nombre,
             apellidos: Apellido
         }
-        setEstado([...Estado, usuarios])
+
+
+
+        var c = Estado.find(i => i.nombres === Nombre && i.apellidos === Apellido)
+        if (c == undefined) {
+            setEstado([...Estado, usuarios])
+        } else {
+            alert("ya existe");
+        }
+
 
 
     }
@@ -43,19 +54,21 @@ const Form = () => {
                 </thead>
                 <tbody>
                     {
-                        Estado.map(usuario, index => {
+                        Estado.map(usuario => {
                             return <>
-                            <tr>
-                            <td>{usuario.nombres}</td>
-                            <td>{usuario.apellidos}</td>
-                            
-                        </tr>
-                        </>
-                           
+                                <tr>
+                                    <td>{usuario.nombres}</td>
+                                    <td>{usuario.apellidos}</td>
+                                </tr>
+                            </>
+
                         })
                     }
                 </tbody>
             </table>
+            <div class="alert alert-danger" role="alert">
+                A simple danger alert—check it out!
+            </div>
         </>
     )
 }
