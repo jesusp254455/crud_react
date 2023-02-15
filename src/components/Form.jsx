@@ -7,7 +7,7 @@ const Form = () => {
 
     const guardar = (e) => {
         e.preventDefault();
-
+        
         let usuarios = {
             nombres: Nombre,
             apellidos: Apellido
@@ -43,15 +43,13 @@ const Form = () => {
                 </thead>
                 <tbody>
                     {
-                        Estado.map(usuario => {
-                           console.log(cities.incluedes(usuario.Nombre))
-
-                        
+                        Estado.map(usuario, index => {
                             return <>
                             <tr>
-                                <td>{usuario.nombres}</td>
-                                <td>{usuario.apellidos}</td>
-                            </tr>
+                            <td>{usuario.nombres}</td>
+                            <td>{usuario.apellidos}</td>
+                            <td>{index}</td>
+                        </tr>
                         </>
                            
                         })
