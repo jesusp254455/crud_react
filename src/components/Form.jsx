@@ -48,7 +48,7 @@ const Form = () => {
                             <tr>
                             <td>{usuario.nombres}</td>
                             <td>{usuario.apellidos}</td>
-                            <td>{index}</td>
+                            
                         </tr>
                         </>
                            
